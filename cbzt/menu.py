@@ -28,13 +28,11 @@ class Option(object):
 
 
 class Menu(object):
-    def __init__(self,screen):
+    def __init__(self,screen,options):
         self.screen = screen
         self.background = pygame.Surface(screen.get_size())
         self.background.fill((0,0,0))
-        # build menu options
-        self.options = [Option(cbzt.MULTIPLAYER,"MULTIPLAYER",True),
-                        Option(cbzt.QUIT,"QUIT")]
+        self.options = options
 
     def choose(self):
         # active menu option
@@ -42,11 +40,11 @@ class Menu(object):
         # TODO: make pertty
         while 1:
             # render menu options
-            num = len(self.options)
+            num = 0
             for option in self.options:
                 s = option.get_surface()
                 sw,sh = s.get_size()
-                self.background.blit(s,(320-sw,240-num*40))
+                self.background.blit(s,(320-sw/2,240-(len(self.options)*40)/2-num*40))
                 num -= 1
 
             self.screen.blit(self.background,(0,0))
@@ -77,7 +75,7 @@ class Menu(object):
 
 
 
-def launch(screen):
-    print "MENU"
-    menu = Menu(screen)
+def launch(screen,options):
+    print "RENDER MENU"
+    menu = Menu(screen,options)
     return menu.choose()

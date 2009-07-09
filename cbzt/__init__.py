@@ -4,7 +4,7 @@ import menu
 
 
 # enumaretion of states
-QUIT, MENU, MULTIPLAYER = range(3)
+QUIT, MENU, MULTIPLAYER, HOST, CONNECT = range(5)
 
 class CBZT(object):
 
@@ -19,9 +19,24 @@ class CBZT(object):
         print "MAIN LOOP"
         while self.state is not QUIT:
             if self.state == MENU:
-                self.state = menu.launch(self.screen)
+                print "MAIN MENU"
+                options = [menu.Option(MULTIPLAYER,"MULTIPLAYER",True),
+                           menu.Option(QUIT,"QUIT")]
+                self.state = menu.launch(self.screen,options)
             elif self.state == MULTIPLAYER:
-                pass
+                print "MULTIPLAYER MENU"
+                options = [menu.Option(HOST,"HOST",True),
+                           menu.Option(CONNECT,"CONNECT"),
+                           menu.Option(MENU,"MAIN MENU")]
+                self.state = menu.launch(self.screen,options)
+            elif self.state == HOST:
+                print "HOST GAME"
+                options = [menu.Option(MULTIPLAYER,"BACK")]
+                self.state = menu.launch(self.screen,options)
+            elif self.state == CONNECT:
+                print "CONNECT TO GAME"
+                options = [menu.Option(MULTIPLAYER,"BACK")]
+                self.state = menu.launch(self.screen,options)
 
 
 def launch():
