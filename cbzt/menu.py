@@ -27,6 +27,10 @@ class Option(object):
         self.surface.fill((255,255,255))
 
 
+class Textbox(object):
+    pass
+
+
 class Menu(object):
     def __init__(self,screen,options):
         self.screen = screen
