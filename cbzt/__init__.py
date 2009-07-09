@@ -17,6 +17,7 @@ class CBZT(object):
 
     def mainloop(self):
         print "MAIN LOOP"
+        # satan machine for game
         while self.state is not QUIT:
             if self.state == MENU:
                 print "MAIN MENU"
