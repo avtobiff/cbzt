@@ -7,12 +7,11 @@ import menu
 QUIT, MENU, MULTIPLAYER, HOST, CONNECT = range(5)
 
 class CBZT(object):
-
-
     def __init__(self):
         print "INITIALIZING"
         self.state = MENU
         pygame.display.init()
+        pygame.display.set_caption("CBZT")
         self.screen = pygame.display.set_mode((640,480))
 
     def mainloop(self):
