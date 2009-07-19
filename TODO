@@ -1,0 +1,2 @@
+* Create a Draw/Graphics/Paint class which would draw all graphics on screen,
+  this would be passed around to all classes that draw.
