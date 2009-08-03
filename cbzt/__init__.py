@@ -44,8 +44,9 @@ def launch():
     try:
         cbzt = CBZT()
         cbzt.mainloop()
-    except:
+    except Exception, e:
         print >>sys.stderr,"ERROR"
+        print >>sys.stderr,e
         return 1
     print "QUIT"
     return 0
