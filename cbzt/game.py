@@ -7,8 +7,8 @@ from exception import EndGame
 
 class Board(Drawable):
     def __init__(self):
-        Drawable.__init__(self,0,0)
         self.build()
+        Drawable.__init__(self,self.surface,0,0)
 
     def build(self):
         self.surface= pygame.Surface((640,480))
