@@ -4,11 +4,14 @@ import sys
 import cbzt
 from exception import EndGame
 from game import Board, Game
+from player import AI, Player
 
 
 class SinglePlayer(Game):
     def __init__(self,screen):
-        Game.__init__(self,screen)
+        self.player = Player(40)
+        self.ai = AI(600)
+        Game.__init__(self,screen,self.player,self.ai)
 
     def game(self):
         while 1:
