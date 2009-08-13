@@ -11,10 +11,18 @@ def tail(list):
 def draw_character(surface,s_xpos,char,dimension,bg,fg):
     width,height = dimension
     char_surface = pygame.Surface((cbzt.font.WIDTH*width,cbzt.font.HEIGHT*height))
-    char_surface.fill(bg)
+
+    # return big block if character is not in font
+    if char in cbzt.font.font:
+        char_surface.fill(bg)
+    else:
+        char_surface.fill(fg)
+        return char_surface
+
     char_pixel = pygame.Surface(dimension)
     char_pixel.fill(fg)
     ypos = 0
+
     for y in range(cbzt.font.HEIGHT):
         xpos = 0
         for x in range(cbzt.font.WIDTH):
