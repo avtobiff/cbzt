@@ -3,8 +3,11 @@ import pygame
 from draw import Drawable
 
 
+# constants
 # change in y axis
 DY = 5
+TOP = 40
+BOTTOM = 440
 
 
 class Player(Drawable):
@@ -16,10 +19,12 @@ class Player(Drawable):
         self.score = 0
 
     def up(self):
-        self.y += DY
+        if self.y < BOTTOM:
+            self.y += DY
 
     def down(self):
-        self.y -= DY
+        if self.y > TOP:
+            self.y -= DY
 
     def get_y(self):
         return self.y
