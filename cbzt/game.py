@@ -6,12 +6,12 @@ from exception import EndGame
 
 
 class Ball(Drawable):
-    def __init__(self,x,y,direction,velocity):
+    def __init__(self,position,direction,velocity):
         self.direction = direction
         self.velocity = velocity
         ball = pygame.Surface((10,10))
         ball.fill((255,)*3)
-        Drawable.__init__(self,ball,x,y)
+        Drawable.__init__(self,ball,position)
 
     def update(self):
         pass
@@ -20,7 +20,7 @@ class Ball(Drawable):
 class Board(Drawable):
     def __init__(self):
         self.build()
-        Drawable.__init__(self,self.surface,0,0)
+        Drawable.__init__(self,self.surface,(0,0))
 
     def build(self):
         self.surface= pygame.Surface((640,480))

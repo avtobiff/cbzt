@@ -14,7 +14,7 @@ class Player(Drawable):
     def __init__(self,x,name=""):
         paddle = pygame.Surface((10,30))
         paddle.fill((255,)*3)
-        Drawable.__init__(self,paddle,x,240)
+        Drawable.__init__(self,paddle,(x,240))
         self.name = name
         self.score = 0
 

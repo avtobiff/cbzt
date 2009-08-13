@@ -1,7 +1,6 @@
 class Drawable(object):
-    def __init__(self,surface,x,y):
-        self.x = x
-        self.y = y
+    def __init__(self,surface,position):
+        self.x, self.y = position
         self.surface = surface
 
     def draw(self,screen):
