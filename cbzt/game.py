@@ -1,4 +1,5 @@
 import pygame
+import math
 
 import cbzt
 from draw import Drawable
@@ -14,7 +15,8 @@ class Ball(Drawable):
         Drawable.__init__(self,ball,position)
 
     def update(self):
-        pass
+        self.x += math.cos(self.direction)*self.velocity
+        self.y += math.sin(self.direction)*self.velocity
 
 
 class Board(Drawable):

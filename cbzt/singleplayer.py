@@ -1,4 +1,6 @@
 import pygame
+import math
+import random
 import sys
 
 import cbzt
@@ -10,7 +12,7 @@ from player import AI, Player
 class SinglePlayer(Game):
     def __init__(self,screen):
         pygame.key.set_repeat(1,50)
-        self.ball = Ball((40,40),0,0)
+        self.ball = Ball((80,240),random.random()*math.pi/2-random.random()*math.pi/2,5+random.random()*5)
         self.player = Player(40)
         self.ai = AI(600,self.ball)
         Game.__init__(self,screen,self.player,self.ai,self.ball)
