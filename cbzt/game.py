@@ -18,7 +18,7 @@ class Board(Drawable):
         marker = pygame.Surface((5,10))
         marker.fill((255,)*3)
         for y in range(32):
-            self.surface.blit(marker,(320,y*20))
+            self.surface.blit(marker,(320,y*20+5))
 
 class Game(object):
     def __init__(self,screen,p0,p1):
