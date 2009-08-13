@@ -6,8 +6,7 @@ import cbzt.text
 class Option(object):
     def __init__(self, state, name, active=False):
         self.state   = state
-        self.name    = name
-        self.surface = cbzt.text.draw("a") #pygame.Surface((10*len(name),20))
+        self.name    = name.lower()
         if active:
             self.activate()
         else:
@@ -21,11 +20,11 @@ class Option(object):
 
     def activate(self):
         self.active = True
-        self.surface.fill((255,0,0))
+        self.surface = cbzt.text.render(self.name,fg=(255,0,0))
 
     def deactivate(self):
         self.active = False
-        self.surface.fill((255,255,255))
+        self.surface = cbzt.text.render(self.name)
 
 
 class Textbox(object):
@@ -33,16 +32,11 @@ class Textbox(object):
 
 
 class Menu(object):
-    def __init__(self,screen,options,colours):
-        print "HIHIH"
+    def __init__(self,screen,options):
         self.screen = screen
         self.options = options
         self.background = pygame.Surface(screen.get_size())
-        if colours is None:
-            self.colours = {"bg":(0,)*3, "fg":(255,)*3, "hilight":(255,0,0)}
-        else:
-            self.colours = colours
-        self.background.fill(self.colours["bg"])
+        self.background.fill((0,)*3)
 
     def choose(self):
         # active menu option
@@ -85,7 +79,7 @@ class Menu(object):
 
 
 
-def launch(screen,options,colours=None):
+def launch(screen,options):
     print "RENDER MENU"
-    menu = Menu(screen,options,colours)
+    menu = Menu(screen,options)
     return menu.choose()
