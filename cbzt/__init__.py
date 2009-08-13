@@ -32,10 +32,10 @@ class CBZT(object):
             elif self.state == MULTIPLAYER:
                 print "MULTIPLAYER MENU"
                 options = [menu.Item("MULTIPLAYER"),
-                           menu.Option(MULTIPLAYER,"NOT IMPLEMENTED",True),
+                           menu.Option(MENU,"NOT IMPLEMENTED",True),]
                            #menu.Option(HOST,"HOST",True),
                            #menu.Option(CONNECT,"CONNECT"),
-                           menu.Option(MENU,"MAIN MENU")]
+                           #menu.Option(MENU,"MAIN MENU")]
                 self.state = menu.launch(self.screen,options)
             elif self.state == HOST:
                 print "HOST GAME"
