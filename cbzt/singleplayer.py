@@ -9,6 +9,7 @@ from player import AI, Player
 
 class SinglePlayer(Game):
     def __init__(self,screen):
+        self.clock = pygame.time.Clock()
         self.player = Player(40)
         self.ai = AI(600)
         Game.__init__(self,screen,self.player,self.ai)
@@ -23,6 +24,7 @@ class SinglePlayer(Game):
             # TODO: need collision detection
 
             self.read_input(pygame.event.poll())
+            self.clock.tick(cbzt.FPS)
 
     def read_input(self,event):
         if event.type == pygame.QUIT:
