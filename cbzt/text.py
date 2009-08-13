@@ -39,7 +39,7 @@ def render(string,bg=(0,)*3,fg=(255,)*3,width=5,height=5,surface=None,xpos=0):
         return surface
     elif surface is None: # create canvas
         # all character's widths plus spaces in between
-        x = len(string)*width*cbzt.font.WIDTH#+(len(string))*cbzt.font.WIDTH
+        x = len(string)*width*(cbzt.font.WIDTH+1)
         # character height
         y = height*cbzt.font.HEIGHT
         s = pygame.Surface((x,y))
