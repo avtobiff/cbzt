@@ -3,6 +3,10 @@ import pygame
 from draw import Drawable
 
 
+# change in y axis
+DY = 5
+
+
 class Player(Drawable):
     def __init__(self,x,name=""):
         paddle = pygame.Surface((10,30))
@@ -12,10 +16,10 @@ class Player(Drawable):
         self.score = 0
 
     def up(self):
-        self.y += 5
+        self.y += DY
 
     def down(self):
-        self.y -= 5
+        self.y -= DY
 
     def get_y(self):
         return self.y
