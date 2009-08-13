@@ -21,7 +21,8 @@ class CBZT(object):
         while self.state is not QUIT:
             if self.state == MENU:
                 print "MAIN MENU"
-                options = [menu.Option(SINGLEPLAYER,"SINGLE PLAYER",True),
+                options = [menu.Item("CBZT"),
+                           menu.Option(SINGLEPLAYER,"SINGLE PLAYER",True),
                            menu.Option(MULTIPLAYER,"MULTIPLAYER"),
                            menu.Option(QUIT,"QUIT")]
                 self.state = menu.launch(self.screen,options)
@@ -30,7 +31,8 @@ class CBZT(object):
                 # TODO: launch single player game
             elif self.state == MULTIPLAYER:
                 print "MULTIPLAYER MENU"
-                options = [menu.Option(MULTIPLAYER,"NOT IMPLEMENTED",True),
+                options = [menu.Item("MULTIPLAYER"),
+                           menu.Option(MULTIPLAYER,"NOT IMPLEMENTED",True),
                            #menu.Option(HOST,"HOST",True),
                            #menu.Option(CONNECT,"CONNECT"),
                            menu.Option(MENU,"MAIN MENU")]
