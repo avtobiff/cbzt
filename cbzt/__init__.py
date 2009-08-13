@@ -7,7 +7,7 @@ from exception import EndGame
 
 
 # enumaretion of states
-QUIT, MENU, SINGLEPLAYER, MULTIPLAYER, HOST, CONNECT = range(6)
+QUIT, MENU, SINGLEPLAYER, MULTIPLAYER, HOST, CONNECT, INSTRUCTIONS = range(7)
 
 # draw this many frames per second
 FPS = 20
@@ -31,6 +31,7 @@ class CBZT(object):
                 options = [menu.Item("CBZT"),
                            menu.Option(SINGLEPLAYER,"SINGLE PLAYER",True),
                            menu.Option(MULTIPLAYER,"MULTIPLAYER"),
+                           menu.Option(INSTRUCTIONS,"INSTRUCTIONS"),
                            menu.Option(QUIT,"QUIT")]
                 self.state = menu.launch(self.screen,options)
             elif self.state == SINGLEPLAYER:
@@ -55,6 +56,13 @@ class CBZT(object):
             elif self.state == CONNECT:
                 print "CONNECT TO GAME"
                 options = [menu.Option(MULTIPLAYER,"BACK")]
+                self.state = menu.launch(self.screen,options)
+            elif self.state == INSTRUCTIONS:
+                print "INSTRUCTIONS"
+                options = [menu.Item("CONTROLS PLAYER 1"),
+                           menu.Item("UP ARROW : UP"),
+                           menu.Item("DOWN ARROW : DOWN"),
+                           menu.Option(MENU,"MAIN MENU",True)]
                 self.state = menu.launch(self.screen,options)
 
 
