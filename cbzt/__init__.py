@@ -4,7 +4,7 @@ import menu
 
 
 # enumaretion of states
-QUIT, MENU, MULTIPLAYER, HOST, CONNECT = range(5)
+QUIT, MENU, SINGLEPLAYER, MULTIPLAYER, HOST, CONNECT = range(6)
 
 class CBZT(object):
     def __init__(self):
@@ -20,13 +20,18 @@ class CBZT(object):
         while self.state is not QUIT:
             if self.state == MENU:
                 print "MAIN MENU"
-                options = [menu.Option(MULTIPLAYER,"MULTIPLAYER",True),
+                options = [menu.Option(SINGLEPLAYER,"SINGLE PLAYER",True),
+                           menu.Option(MULTIPLAYER,"MULTIPLAYER"),
                            menu.Option(QUIT,"QUIT")]
                 self.state = menu.launch(self.screen,options)
+            elif self.state == SINGLEPLAYER:
+                print "SINGLE PLAYER GAME"
+                # TODO: launch single player game
             elif self.state == MULTIPLAYER:
                 print "MULTIPLAYER MENU"
-                options = [menu.Option(HOST,"HOST",True),
-                           menu.Option(CONNECT,"CONNECT"),
+                options = [menu.Option(MULTIPLAYER,"NOT IMPLEMENTED YET",True),
+                           #menu.Option(HOST,"HOST",True),
+                           #menu.Option(CONNECT,"CONNECT"),
                            menu.Option(MENU,"MAIN MENU")]
                 self.state = menu.launch(self.screen,options)
             elif self.state == HOST:
