@@ -40,7 +40,9 @@ class Game(object):
         self.board = Board()
         self.p0 = p0
         self.p1 = p1
-        self.items = [self.board,self.p0,self.p1,self.ball]
+        self.score0 = ScoreBoard(self.screen,260)
+        self.score1 = ScoreBoard(self.screen,360)
+        self.items = [self.board,self.p0,self.p1,self.ball,self.score0,self.score1]
         # start game
         self.game()
 
@@ -49,5 +51,13 @@ class Game(object):
 
 
 class ScoreBoard(Drawable):
-    def __init__(self,screen,points,pos):
-        
+    def __init__(self,screen,x):
+        self.points = 0
+        board = self.build()
+        Drawable.__init__(self,board,(x,20))
+
+    def build(self):
+        return cbzt.text.render("%s" % self.points)
+
+    def set_score(self,score):
+        self.points = score
