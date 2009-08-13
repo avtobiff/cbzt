@@ -35,7 +35,6 @@ class Board(Drawable):
 
 class Game(object):
     def __init__(self,screen,p0,p1,ball):
-        self.clock = pygame.time.Clock()
         self.screen = screen
         self.board = Board()
         self.p0 = p0
