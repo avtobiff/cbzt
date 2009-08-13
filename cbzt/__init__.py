@@ -10,7 +10,7 @@ from exception import EndGame
 QUIT, MENU, SINGLEPLAYER, MULTIPLAYER, HOST, CONNECT = range(6)
 
 # draw this many frames per second
-FPS = 60
+FPS = 20
 
 
 class CBZT(object):
