@@ -40,10 +40,14 @@ class Game(object):
         self.board = Board()
         self.p0 = p0
         self.p1 = p1
-        self.ball = Ball(40,40,0,0)
         self.items = [self.board,self.p0,self.p1,self.ball]
         # start game
         self.game()
 
     def game(self):
         raise EndGame("EXIT GAME")
+
+
+class ScoreBoard(Drawable):
+    def __init__(self,screen,points,pos):
+        
