@@ -19,7 +19,6 @@ class CBZT(object):
         self.state = MENU
         pygame.display.init()
         pygame.display.set_caption("CBZT")
-        pygame.key.set_repeat(500,100)
         self.screen = pygame.display.set_mode((640,480))
         self.screen.fill((0,)*3)
 

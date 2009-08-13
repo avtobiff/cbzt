@@ -48,6 +48,7 @@ class Menu(object):
         self.items = items
         self.background = pygame.Surface(screen.get_size())
         self.background.fill((0,)*3)
+        pygame.key.set_repeat(500,100)
 
     def choose(self):
         # active menu option
