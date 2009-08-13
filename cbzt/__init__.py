@@ -30,7 +30,7 @@ class CBZT(object):
                 # TODO: launch single player game
             elif self.state == MULTIPLAYER:
                 print "MULTIPLAYER MENU"
-                options = [menu.Option(MULTIPLAYER,"NOT IMPLEMENTED YET",True),
+                options = [menu.Option(MULTIPLAYER,"NOT IMPLEMENTED",True),
                            #menu.Option(HOST,"HOST",True),
                            #menu.Option(CONNECT,"CONNECT"),
                            menu.Option(MENU,"MAIN MENU")]
