@@ -1,5 +1,4 @@
 import pygame
-import cbzt
 import cbzt.text
 
 
