@@ -1,8 +1,8 @@
 class Drawable(object):
-    def __init__(self,x,y):
+    def __init__(self,surface,x,y):
         self.x = x
         self.y = y
-        self.surface = None
+        self.surface = surface
 
     def draw(self,screen):
         screen.blit(self.surface,(self.x,self.y))
