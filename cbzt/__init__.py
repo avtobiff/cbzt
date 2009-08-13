@@ -34,7 +34,8 @@ class CBZT(object):
                 print "SINGLE PLAYER GAME"
                 try:
                     singleplayer.SinglePlayer(self.screen)
-                except EndGame:
+                except EndGame, e:
+                    print e.msg
                     self.state = MENU
             elif self.state == MULTIPLAYER:
                 print "MULTIPLAYER MENU"
