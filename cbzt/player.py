@@ -18,6 +18,9 @@ class Player(Drawable):
         self.name = name
         self.score = 0
 
+    def draw(self,screen):
+        screen.blit(self.surface,(self.x-5,self.y-15))
+
     def up(self):
         if self.y < BOTTOM:
             self.y += DY
