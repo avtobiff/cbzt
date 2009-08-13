@@ -46,8 +46,12 @@ class Player(Drawable):
 
 
 class AI(Player):
-    def think(self, ball):
-        if ball.get_y() < self.get_y():
+    def __init__(self,x,ball):
+        Player.__init__(self,x,"HAL")
+        self.ball = ball
+
+    def update(self):
+        if self.ball.get_y() < self.get_y():
             self.down()
         else:
             self.up()
