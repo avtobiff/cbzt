@@ -1,3 +1,5 @@
+import random
+
 import pygame
 
 from draw import Drawable
@@ -51,7 +53,8 @@ class AI(Player):
         self.ball = ball
 
     def update(self):
-        if self.ball.get_y() < self.get_y():
-            self.down()
-        else:
-            self.up()
+        if random.random() > 0.4:
+            if self.ball.get_y() < self.get_y():
+                self.down()
+            else:
+                self.up()
