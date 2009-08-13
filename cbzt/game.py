@@ -21,10 +21,12 @@ class Board(Drawable):
             self.surface.blit(marker,(320,y*20))
 
 class Game(object):
-    def __init__(self,screen):
+    def __init__(self,screen,p0,p1):
         self.screen = screen
         self.board = Board()
-        self.items = [self.board]
+        self.p0 = p0
+        self.p1 = p1
+        self.items = [self.board,self.p0,self.p1]
         # start game
         self.game()
 
