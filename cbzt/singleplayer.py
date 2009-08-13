@@ -10,7 +10,6 @@ from player import AI, Player
 class SinglePlayer(Game):
     def __init__(self,screen):
         pygame.key.set_repeat(1,50)
-        self.clock = pygame.time.Clock()
         self.ball = Ball(40,40,0,0)
         self.player = Player(40)
         self.ai = AI(600,self.ball)
