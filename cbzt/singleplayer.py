@@ -3,7 +3,7 @@ import sys
 
 import cbzt
 from exception import EndGame
-from game import Board, Game
+from game import Game
 from player import AI, Player
 
 
