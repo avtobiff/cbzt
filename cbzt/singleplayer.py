@@ -9,6 +9,7 @@ from player import AI, Player
 
 class SinglePlayer(Game):
     def __init__(self,screen):
+        pygame.key.set_repeat(1,50)
         self.clock = pygame.time.Clock()
         self.player = Player(40)
         self.ai = AI(600)
@@ -33,7 +34,7 @@ class SinglePlayer(Game):
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 raise EndGame("EXIT SINGLE PLAYER")
+            elif event.key == pygame.K_DOWN:
+                self.p0.up()
             elif event.key == pygame.K_UP:
-                pass
-            elif event.key == pygame.K_UP:
-                pass
+                self.p0.down()
