@@ -29,4 +29,9 @@ class SinglePlayer(Game):
             print "QUIT"
             sys.exit(0)
         elif event.type == pygame.KEYDOWN:
-            raise EndGame("EXIT SINGLE PLAYER")
+            if event.key == pygame.K_ESCAPE:
+                raise EndGame("EXIT SINGLE PLAYER")
+            elif event.key == pygame.K_UP:
+                pass
+            elif event.key == pygame.K_UP:
+                pass
