@@ -1,10 +1,14 @@
 import sys
 import pygame
 import menu
+import singleplayer
+
+from exception import EndGame
 
 
 # enumaretion of states
 QUIT, MENU, SINGLEPLAYER, MULTIPLAYER, HOST, CONNECT = range(6)
+
 
 class CBZT(object):
     def __init__(self):
@@ -28,7 +32,10 @@ class CBZT(object):
                 self.state = menu.launch(self.screen,options)
             elif self.state == SINGLEPLAYER:
                 print "SINGLE PLAYER GAME"
-                # TODO: launch single player game
+                try:
+                    singleplayer.SinglePlayer(self.screen)
+                except EndGame:
+                    self.state = MENU
             elif self.state == MULTIPLAYER:
                 print "MULTIPLAYER MENU"
                 options = [menu.Item("MULTIPLAYER"),
