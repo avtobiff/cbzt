@@ -9,6 +9,9 @@ from exception import EndGame
 # enumaretion of states
 QUIT, MENU, SINGLEPLAYER, MULTIPLAYER, HOST, CONNECT = range(6)
 
+# draw this many frames per second
+FPS = 60
+
 
 class CBZT(object):
     def __init__(self):
