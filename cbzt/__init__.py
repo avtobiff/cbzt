@@ -13,6 +13,7 @@ class CBZT(object):
         pygame.display.init()
         pygame.display.set_caption("CBZT")
         self.screen = pygame.display.set_mode((640,480))
+        self.screen.fill((0,)*3)
 
     def mainloop(self):
         print "MAIN LOOP"
