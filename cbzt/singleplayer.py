@@ -16,3 +16,10 @@ class SinglePlayer(Game):
         self.left, self.right = True, False # ball always starts on the left
         self.top, self.bottom = False, False
         Game.__init__(self,screen,self.player,self.ai,self.ball)
+
+    def gameover(self):
+        if self.p1.get_score() >= 9:
+            msg = "YOU LOST"
+        else:
+            msg = "YOU WON"
+        Game.over(msg)
