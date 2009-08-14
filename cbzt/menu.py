@@ -4,7 +4,7 @@ import cbzt.text
 
 class Item(object):
     def __init__(self, name):
-        self.name    = name.lower()
+        self.name    = name
         self.surface = cbzt.text.render(self.name,fg=(255,255,0))
 
     def get_surface(self):
