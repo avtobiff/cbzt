@@ -16,8 +16,8 @@ class Item(object):
 
 class Option(Item):
     def __init__(self, state, name, active=False):
+        Item.__init__(self,name)
         self.state   = state
-        self.name    = name.lower()
         if active:
             self.activate()
         else:
