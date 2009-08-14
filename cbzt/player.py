@@ -41,11 +41,8 @@ class Player(Drawable):
     def get_score(self):
         return self.score
 
-    def score(self):
+    def do_score(self):
         self.score += 1
-
-    def update(self):
-        pass
 
 
 class AI(Player):
