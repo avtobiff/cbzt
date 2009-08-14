@@ -42,7 +42,7 @@ class Game(object):
         self.board = Board()
         self.p0 = p0
         self.p1 = p1
-        self.score0 = ScoreBoard(self.screen,260)
+        self.score0 = ScoreBoard(self.screen,250)
         self.score1 = ScoreBoard(self.screen,360)
         self.items = [self.board,self.p0,self.p1,self.ball,self.score0,self.score1]
         # start game
