@@ -1,2 +1,3 @@
-* Create a Draw/Graphics/Paint class which would draw all graphics on screen,
-  this would be passed around to all classes that draw.
+* Fix duplicate ball bounce in paddle.
+* Fix ball bouncing direction and speed.
+* Create internet multiplayer game mode.
