@@ -21,5 +21,8 @@ class Drawable(pygame.sprite.Sprite):
     def get_y(self):
         return self.y
 
+    def position(self):
+        return self.x, self.y
+
     def update(self):
         pass
