@@ -63,6 +63,7 @@ class Game(object):
         self.clock = pygame.time.Clock()
         self.screen = screen
         self.board = Board()
+        self.hit = False
         self.p0 = p0
         self.p1 = p1
         self.score0 = ScoreBoard(self.screen,250)
@@ -71,6 +72,35 @@ class Game(object):
         # start game
         self.new_round()
         self.game()
+
+    def collision(self):
+        self.hit = False
+        if not self.area.contains(self.ball.rect):
+            self.left   = self.ball.get_x() < 5
+            self.right  = self.ball.get_x() > 635
+            self.top    = self.ball.get_y() < 5
+            self.bottom = self.ball.get_y() > 475
+        else: # collide with players
+            self.player.rect.inflate(-9,0)
+            self.ai.rect.inflate(-9,0)
+
+            if self.ball.rect.colliderect(self.player.rect) and not self.hit:
+                self.hit = True
+                x = self.player.get_x()-self.ball.get_x()
+                y = self.player.get_y()-self.ball.get_y()
+                velocity = math.sqrt(x**2+y**2)
+                direction = math.atan2(x,y)
+                self.ball.bounce(velocity,direction)
+            elif self.ball.rect.colliderect(self.ai.rect) and not self.hit:
+                self.hit = True
+                x = self.ai.get_x()-self.ball.get_x()
+                y = self.ai.get_y()-self.ball.get_y()
+                velocity = math.sqrt(x**2+y**2)
+                direction = math.atan2(x,y)
+                self.ball.bounce(velocity,direction)
+            elif self.hit:
+                self.hit = False
+
 
     def new_round(self):
         self.p0.reinit()
