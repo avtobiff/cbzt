@@ -1,3 +1,12 @@
+cbzt (0.1.1)
+
+  * added encoding declaration to Python source files, this makes the
+    program runnable.
+  * updated README with a simple note saying that ESCAPE takes you
+    back, way back.
+
+ -- Per Andersson <avtobiff@gmail.com>  Fri, 14 Aug 2009 15:59:06 +0200
+
 cbzt (0.1)
 
   * Initial release.
