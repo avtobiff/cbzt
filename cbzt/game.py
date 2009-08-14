@@ -101,6 +101,36 @@ class Game(object):
             elif self.hit:
                 self.hit = False
 
+    def loop(self):
+        while 1:
+            for item in self.items:
+                item.update()
+                item.draw(self.screen)
+                pygame.display.flip()
+
+            if self.p0.get_score() >= 9 or self.p1.get_score() >= 9:
+                break
+
+            self.collision()
+
+            if self.left:
+                self.ai.do_score()
+                self.score1.set_score(self.p1.get_score())
+                self.new_round()
+                self.right = False
+            elif self.right:
+                self.player.do_score()
+                self.score0.set_score(self.p0.get_score())
+                self.new_round()
+                self.right = False
+            elif self.top or self.bottom:
+                self.ball.bounce()
+                self.top, self.bottom = False, False
+
+            self.read_input(pygame.event.poll())
+            self.clock.tick(cbzt.FPS)
+
+        return self.gameover()
 
     def new_round(self):
         self.p0.reinit()
