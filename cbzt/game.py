@@ -14,7 +14,14 @@ class Ball(Drawable):
         ball.fill((255,)*3)
         Drawable.__init__(self,ball,position)
 
+    def draw(self,screen):
+        screen.blit(self.surface,(self.x-5,self.y-5))
+
     def update(self):
+        # bounce of ceiling and floor
+        if self.y < 5 or self.y > 475:
+            self.direction = -self.direction
+
         self.x += math.cos(self.direction)*self.velocity
         self.y += math.sin(self.direction)*self.velocity
 
