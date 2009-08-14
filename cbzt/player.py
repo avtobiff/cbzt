@@ -21,7 +21,8 @@ class Player(Drawable):
         self.score = 0
 
     def draw(self,screen):
-        screen.blit(self.surface,(self.x-5,self.y-15))
+        self.rect = pygame.rect.Rect((self.x,self.y),(10,30))
+        screen.blit(self.image,(self.x-5,self.y-15))
 
     def up(self):
         if self.y < BOTTOM:
