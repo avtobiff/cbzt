@@ -24,7 +24,7 @@ from game import AbstractGame, Ball
 from player import Player
 
 
-class MultiPlayer(AbstractGame):
+class MultiPlayerLocal(AbstractGame):
     def __init__(self,screen):
         self.mode = cbzt.MULTIPLAYER_LOCAL
         pygame.key.set_repeat(1,50)

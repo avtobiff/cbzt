@@ -74,7 +74,7 @@ class CBZT(object):
             elif self.state == MULTIPLAYER_LOCAL:
                 print "MULTIPLAYER LOCAL"
                 try:
-                    multiplayer.MultiPlayer(self.screen)
+                    multiplayer.MultiPlayerLocal(self.screen)
                 except EndGame, e:
                     print e.msg
                     self.state = MENU
