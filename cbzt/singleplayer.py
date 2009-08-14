@@ -7,6 +7,7 @@ from player import AI, Player
 
 class SinglePlayer(Game):
     def __init__(self,screen):
+        self.mode = cbzt.SINGLEPLAYER
         pygame.key.set_repeat(1,50)
         self.area = screen.get_rect()
         self.ball = Ball((80,240))
