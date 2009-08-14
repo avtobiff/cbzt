@@ -1,10 +1,6 @@
 import pygame
-import math
-import random
-import sys
 
 import cbzt
-from exception import EndGame
 from game import Ball, Game
 from player import AI, Player
 

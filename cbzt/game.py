@@ -1,6 +1,7 @@
 import pygame
 import math
 import random
+import sys
 
 import cbzt
 import pygame
