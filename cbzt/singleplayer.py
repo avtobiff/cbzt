@@ -34,13 +34,6 @@ class SinglePlayer(Game):
         while 1:
             self.read_input(pygame.event.poll())
 
-
-    def new_round(self):
-        self.ball.reinit(self.left)
-        self.player.reinit((40,240))
-        self.ai.reinit((600,240))
-        self.left, self.right = False, False
-
     def read_input(self,event):
         if event.type == pygame.QUIT:
             print "QUIT"

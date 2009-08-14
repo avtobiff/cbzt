@@ -133,9 +133,10 @@ class Game(object):
         return self.gameover()
 
     def new_round(self):
-        self.p0.reinit()
-        self.p1.reinit()
-        self.ball.reinit()
+        self.ball.reinit(self.left)
+        self.p0.reinit((40,240))
+        self.p1.reinit((600,240))
+        self.left, self.right = False, False
 
     def game(self):
         raise EndGame("EXIT GAME")
