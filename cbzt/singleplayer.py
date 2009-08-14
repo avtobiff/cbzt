@@ -19,16 +19,3 @@ class SinglePlayer(Game):
         self.left, self.right = True, False # ball always starts on the left
         self.top, self.bottom = False, False
         Game.__init__(self,screen,self.player,self.ai,self.ball)
-
-
-    def read_input(self,event):
-        if event.type == pygame.QUIT:
-            print "QUIT"
-            sys.exit(0)
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                raise EndGame("EXIT SINGLE PLAYER")
-            elif event.key == pygame.K_DOWN:
-                self.p0.up()
-            elif event.key == pygame.K_UP:
-                self.p0.down()

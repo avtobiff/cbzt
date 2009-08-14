@@ -151,6 +151,18 @@ class Game(object):
         while 1:
             self.read_input(pygame.event.poll())
 
+    def read_input(self,event):
+        if event.type == pygame.QUIT:
+            print "QUIT"
+            sys.exit(0)
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                raise EndGame("EXIT SINGLE PLAYER")
+            elif event.key == pygame.K_DOWN:
+                self.p0.up()
+            elif event.key == pygame.K_UP:
+                self.p0.down()
+
 
 class ScoreBoard(Drawable):
     def __init__(self,screen,x):
