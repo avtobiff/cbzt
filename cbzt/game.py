@@ -71,7 +71,7 @@ class Game(object):
         self.items = [self.board,self.p0,self.p1,self.ball,self.score0,self.score1]
         # start game
         self.new_round()
-        self.game()
+        self.loop()
 
     def collision(self):
         self.hit = False
@@ -137,9 +137,6 @@ class Game(object):
         self.p0.reinit((40,240))
         self.p1.reinit((600,240))
         self.left, self.right = False, False
-
-    def game(self):
-        raise EndGame("EXIT GAME")
 
 
 class ScoreBoard(Drawable):
