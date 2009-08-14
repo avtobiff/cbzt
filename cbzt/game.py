@@ -59,7 +59,7 @@ class Board(Drawable):
             self.surface.blit(marker,(320,y*20+5))
 
 
-class Game(object):
+class AbstractGame(object):
     def __init__(self,screen,p0,p1,ball):
         self.clock = pygame.time.Clock()
         self.screen = screen

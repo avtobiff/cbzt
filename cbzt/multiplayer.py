@@ -1,11 +1,11 @@
 import pygame
 
 import cbzt
-from game import Ball, Game
+from game import AbstractGame, Ball
 from player import Player
 
 
-class MultiPlayer(Game):
+class MultiPlayer(AbstractGame):
     def __init__(self,screen):
         self.mode = cbzt.MULTIPLAYER_LOCAL
         pygame.key.set_repeat(1,50)
@@ -15,11 +15,11 @@ class MultiPlayer(Game):
         self.playertwo = Player(600)
         self.left, self.right = True, False # ball always starts on the left
         self.top, self.bottom = False, False
-        Game.__init__(self,screen,self.playerone,self.playertwo,self.ball)
+        AbstractGame.__init__(self,screen,self.playerone,self.playertwo,self.ball)
 
     def gameover(self):
         if self.p0.get_score() >= 9:
             msg = "PLAYER 1 WON"
         else:
             msg = "PLAYER 2 WON"
-        Game.over(msg)
+        AbstractGame.over(msg)
