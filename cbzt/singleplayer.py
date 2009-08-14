@@ -22,4 +22,4 @@ class SinglePlayer(AbstractGame):
             msg = "YOU LOST"
         else:
             msg = "YOU WON"
-        AbstractGame.over(msg)
+        AbstractGame.over(self,msg)

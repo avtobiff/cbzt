@@ -22,4 +22,4 @@ class MultiPlayer(AbstractGame):
             msg = "PLAYER 1 WON"
         else:
             msg = "PLAYER 2 WON"
-        AbstractGame.over(msg)
+        AbstractGame.over(self,msg)
