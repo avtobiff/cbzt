@@ -7,6 +7,22 @@ No story about kidnapped people, glory, or adventure. This is just a game.
 
 
 
+THE NAME
+--------
+A few years ago me and grul had nothing to do, because internet was broken due
+to some hurricane, flood, or simple Swedish thunder storm. So we decided to code
+PONG in C and OpenGL. After a few hours we had a working game; all coded with
+pure skills and no internet access.
+
+We named the game POMG, a recursive acronym for POMG OMG.
+
+The CBZT name comes from the ROT13 encoded word POMG.
+
+(The ROT13 encoding of PONG, although simpler to pronounce, did not match the
+my crazyness.)
+
+
+
 FEATURES
 --------
 CBZT features single player and local multiplayer game modes right now.
