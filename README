@@ -1,0 +1,62 @@
+CBZT
+----
+CBZT is a PONG clone written from scratch in Python. It uses pygame for
+graphics end user input.
+
+No story about kidnapped people, glory, or adventure. This is just a game.
+
+
+
+FEATURES
+--------
+CBZT features single player and local multiplayer game modes right now.
+
+CBZT comes complete with weird ball bounce bugs as well as other possible
+quirks which I did not have the time or energy to fix.
+
+
+
+CONTROLS
+--------
+PLAYER 1
+UP : S
+DOWN : S
+
+PLAYER 2
+UP : UP ARROW
+DOWN : DOWN ARROW
+
+Use directional controls to move the paddle up and down.
+
+
+RESOURCES
+---------
+CBZT source repository is available at
+
+    http://github.com/avtobiff/cbzt
+
+To checkout the sources do
+
+    git clone git://github.com/avtobiff/cbzt.git
+
+
+
+LICENSE
+-------
+CBZT is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+CBZT is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with CBZT.  If not, see <http://www.gnu.org/licenses/>.
+
+Copyright © Per Andersson 2009
+
+
+ -- Per Andersson <avtobiff@gmail.com> Fri, 14 Aug 2009 15:27:04 +0200
