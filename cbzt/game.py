@@ -139,11 +139,7 @@ class Game(object):
         self.p1.reinit((600,240))
         self.left, self.right = False, False
 
-    def gameover(self):
-        if self.ai.get_score() >= 9:
-            msg = "YOU LOST"
-        else:
-            msg = "YOU WON"
+    def over(self,msg):
         t = cbzt.text.render(msg,width=8,height=8)
         sw,sh = t.get_size()
         self.screen.blit(t,(320-sw/2,240-sh/2))
