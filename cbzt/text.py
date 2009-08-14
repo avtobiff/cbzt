@@ -52,7 +52,7 @@ def render(string,bg=(0,)*3,fg=(255,)*3,width=5,height=5,surface=None,xpos=0):
         y = height*cbzt.font.HEIGHT
         s = pygame.Surface((x,y))
         s.fill(bg)
-        return render(string,bg,fg,width,height,s)
+        return render(string.lower(),bg,fg,width,height,s)
     else: # recurse over string and draw message
         surface = draw_character(surface,xpos,head(string),(width,height),bg,fg)
         xpos += width*(cbzt.font.WIDTH+1) # space plus a new character
