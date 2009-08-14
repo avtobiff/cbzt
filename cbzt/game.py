@@ -82,20 +82,20 @@ class Game(object):
             self.top    = self.ball.get_y() < 5
             self.bottom = self.ball.get_y() > 475
         else: # collide with players
-            self.player.rect.inflate(-9,0)
-            self.ai.rect.inflate(-9,0)
+            self.p0.rect.inflate(-9,0)
+            self.p1.rect.inflate(-9,0)
 
-            if self.ball.rect.colliderect(self.player.rect) and not self.hit:
+            if self.ball.rect.colliderect(self.p0.rect) and not self.hit:
                 self.hit = True
-                x = self.player.get_x()-self.ball.get_x()
-                y = self.player.get_y()-self.ball.get_y()
+                x = self.p0.get_x()-self.ball.get_x()
+                y = self.p0.get_y()-self.ball.get_y()
                 velocity = math.sqrt(x**2+y**2)
                 direction = math.atan2(x,y)
                 self.ball.bounce(velocity,direction)
-            elif self.ball.rect.colliderect(self.ai.rect) and not self.hit:
+            elif self.ball.rect.colliderect(self.p1.rect) and not self.hit:
                 self.hit = True
-                x = self.ai.get_x()-self.ball.get_x()
-                y = self.ai.get_y()-self.ball.get_y()
+                x = self.p1.get_x()-self.ball.get_x()
+                y = self.p1.get_y()-self.ball.get_y()
                 velocity = math.sqrt(x**2+y**2)
                 direction = math.atan2(x,y)
                 self.ball.bounce(velocity,direction)
@@ -115,12 +115,12 @@ class Game(object):
             self.collision()
 
             if self.left:
-                self.ai.do_score()
+                self.p1.do_score()
                 self.score1.set_score(self.p1.get_score())
                 self.new_round()
                 self.right = False
             elif self.right:
-                self.player.do_score()
+                self.p0.do_score()
                 self.score0.set_score(self.p0.get_score())
                 self.new_round()
                 self.right = False
