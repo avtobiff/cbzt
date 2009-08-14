@@ -38,7 +38,7 @@ class MultiPlayer(AbstractGame):
 
     def gameover(self):
         if self.p0.get_score() >= 9:
-            msg = "PLAYER 1 WON"
+            msg = "PLAYER1 WON"
         else:
-            msg = "PLAYER 2 WON"
+            msg = "PLAYER2 WON"
         AbstractGame.over(self,msg)
