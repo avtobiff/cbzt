@@ -158,8 +158,12 @@ class Game(object):
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 raise EndGame("EXIT SINGLE PLAYER")
-            elif event.key == pygame.K_DOWN:
+            if event.key == pygame.K_s:
                 self.p0.up()
+            elif event.key == pygame.K_w:
+                self.p0.down()
+            elif event.key == pygame.K_DOWN:
+                self.p1.up()
             elif event.key == pygame.K_UP:
                 self.p0.down()
 

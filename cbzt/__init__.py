@@ -60,8 +60,13 @@ class CBZT(object):
             elif self.state == INSTRUCTIONS:
                 print "INSTRUCTIONS"
                 options = [menu.Item("CONTROLS PLAYER 1"),
-                           menu.Item("UP ARROW : UP"),
-                           menu.Item("DOWN ARROW : DOWN"),
+                           menu.Item("  UP : W         "),
+                           menu.Item("DOWN : S         "),
+                           menu.Item(" "),
+                           menu.Item("CONTROLS PLAYER 2"),
+                           menu.Item("  UP : UP ARROW  "),
+                           menu.Item("DOWN : DOWN ARROW"),
+                           menu.Item(" "),
                            menu.Option(MENU,"MAIN MENU",True)]
                 self.state = menu.launch(self.screen,options)
 
