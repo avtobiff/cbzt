@@ -69,7 +69,13 @@ class Game(object):
         self.score1 = ScoreBoard(self.screen,360)
         self.items = [self.board,self.p0,self.p1,self.ball,self.score0,self.score1]
         # start game
+        self.new_round()
         self.game()
+
+    def new_round(self):
+        self.p0.reinit()
+        self.p1.reinit()
+        self.ball.reinit()
 
     def game(self):
         raise EndGame("EXIT GAME")
