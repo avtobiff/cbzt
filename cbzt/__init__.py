@@ -2,12 +2,13 @@ import sys
 import pygame
 import menu
 import singleplayer
+import multiplayer
 
 from exception import EndGame
 
 
 # enumaretion of states
-QUIT, MENU, SINGLEPLAYER, MULTIPLAYER, HOST, CONNECT, INSTRUCTIONS = range(7)
+QUIT, MENU, SINGLEPLAYER, MULTIPLAYER, MULTIPLAYER_LOCAL, HOST, CONNECT, INSTRUCTIONS = range(8)
 
 # draw this many frames per second
 FPS = 20
@@ -46,11 +47,18 @@ class CBZT(object):
                 print "MULTIPLAYER MENU"
                 options = [menu.Item("MULTIPLAYER"),
                            menu.Item(" "),
-                           menu.Option(MENU,"NOT IMPLEMENTED",True),]
+                           menu.Option(MULTIPLAYER_LOCAL,"LOCAL",True),
                            #menu.Option(HOST,"HOST",True),
                            #menu.Option(CONNECT,"CONNECT"),
-                           #menu.Option(MENU,"MAIN MENU")]
+                           menu.Option(MENU,"MAIN MENU")]
                 self.state = menu.launch(self.screen,options)
+            elif self.state == MULTIPLAYER_LOCAL:
+                print "MULTIPLAYER LOCAL"
+                try:
+                    multiplayer.MultiPlayer(self.screen)
+                except EndGame, e:
+                    print e.msg
+                    self.state = MENU
             elif self.state == HOST:
                 print "HOST GAME"
                 options = [menu.Option(MULTIPLAYER,"BACK")]
@@ -61,11 +69,13 @@ class CBZT(object):
                 self.state = menu.launch(self.screen,options)
             elif self.state == INSTRUCTIONS:
                 print "INSTRUCTIONS"
-                options = [menu.Item("CONTROLS PLAYER 1"),
-                           menu.Item("  UP : W         "),
-                           menu.Item("DOWN : S         "),
+                options = [menu.Item("    CONTROLS     "),
                            menu.Item(" "),
-                           menu.Item("CONTROLS PLAYER 2"),
+                           menu.Item("    PLAYER 1     "),
+                           menu.Item("      UP : W     "),
+                           menu.Item("    DOWN : S     "),
+                           menu.Item(" "),
+                           menu.Item("    PLAYER 2     "),
                            menu.Item("  UP : UP ARROW  "),
                            menu.Item("DOWN : DOWN ARROW"),
                            menu.Item(" "),

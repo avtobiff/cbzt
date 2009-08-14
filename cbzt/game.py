@@ -159,10 +159,10 @@ class Game(object):
                 self.p0.up()
             elif event.key == pygame.K_w:
                 self.p0.down()
-            elif event.key == pygame.K_DOWN:
+            elif event.key == pygame.K_DOWN and self.mode == cbzt.MULTIPLAYER_LOCAL:
                 self.p1.up()
-            elif event.key == pygame.K_UP:
-                self.p0.down()
+            elif event.key == pygame.K_UP and self.mode == cbzt.MULTIPLAYER_LOCAL:
+                self.p1.down()
 
 
 class ScoreBoard(Drawable):
