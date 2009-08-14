@@ -1,3 +1,4 @@
 * Fix duplicate ball bounce in paddle.
 * Fix ball bouncing direction and speed.
+* Fix sprite flicker.
 * Create internet multiplayer game mode.
