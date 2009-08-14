@@ -62,11 +62,11 @@ class Game(object):
 class ScoreBoard(Drawable):
     def __init__(self,screen,x):
         self.points = 0
-        board = self.build()
+        board = cbzt.text.render("0")
         Drawable.__init__(self,board,(x,20))
 
-    def build(self):
-        return cbzt.text.render("%s" % self.points)
+    def update(self):
+        self.image = cbzt.text.render("%s" % self.points)
 
     def set_score(self,score):
         self.points = score
