@@ -29,6 +29,7 @@ class CBZT(object):
             if self.state == MENU:
                 print "MAIN MENU"
                 options = [menu.Item("CBZT"),
+                           menu.Item(" "),
                            menu.Option(SINGLEPLAYER,"SINGLE PLAYER",True),
                            menu.Option(MULTIPLAYER,"MULTIPLAYER"),
                            menu.Option(INSTRUCTIONS,"INSTRUCTIONS"),
@@ -44,6 +45,7 @@ class CBZT(object):
             elif self.state == MULTIPLAYER:
                 print "MULTIPLAYER MENU"
                 options = [menu.Item("MULTIPLAYER"),
+                           menu.Item(" "),
                            menu.Option(MENU,"NOT IMPLEMENTED",True),]
                            #menu.Option(HOST,"HOST",True),
                            #menu.Option(CONNECT,"CONNECT"),
