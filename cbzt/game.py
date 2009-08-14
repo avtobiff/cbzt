@@ -1,27 +1,43 @@
 import pygame
 import math
+import random
 
 import cbzt
+import pygame
 from draw import Drawable
 from exception import EndGame
 
 
 class Ball(Drawable):
-    def __init__(self,position,direction,velocity):
-        self.direction = direction
-        self.velocity = velocity
+    def __init__(self,position):
+        self.direction = 0
+        self.velocity = 0
         ball = pygame.Surface((10,10))
         ball.fill((255,)*3)
         Drawable.__init__(self,ball,position)
 
     def draw(self,screen):
-        screen.blit(self.surface,(self.x-5,self.y-5))
+        self.rect = pygame.rect.Rect((self.x,self.y),(10,10))
+        screen.blit(self.image,(self.x-5,self.y-5))
+
+    def bounce(self,velocity=None,direction=None):
+        if direction:
+            self.direction = direction
+        else:
+            self.direction = -self.direction
+        if velocity:
+            self.velocity = velocity
+
+    def reinit(self,left):
+        if left:
+            Drawable.reinit(self,(80,240))
+            self.direction = random.random()*math.pi/2-math.pi/4
+        else:
+            Drawable.reinit(self,(540,240))
+            self.direction = random.random()*math.pi+math.pi/4
+        self.velocity = random.randint(5,10)
 
     def update(self):
-        # bounce of ceiling and floor
-        if self.y < 5 or self.y > 475:
-            self.direction = -self.direction
-
         self.x += math.cos(self.direction)*self.velocity
         self.y += math.sin(self.direction)*self.velocity
 
