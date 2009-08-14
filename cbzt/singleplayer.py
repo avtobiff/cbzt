@@ -21,19 +21,6 @@ class SinglePlayer(Game):
         Game.__init__(self,screen,self.player,self.ai,self.ball)
 
 
-    def gameover(self):
-        if self.ai.get_score() >= 9:
-            msg = "YOU LOST"
-        else:
-            msg = "YOU WON"
-        t = cbzt.text.render(msg,width=8,height=8)
-        sw,sh = t.get_size()
-        self.screen.blit(t,(320-sw/2,240-sh/2))
-        pygame.display.flip()
-
-        while 1:
-            self.read_input(pygame.event.poll())
-
     def read_input(self,event):
         if event.type == pygame.QUIT:
             print "QUIT"

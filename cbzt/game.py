@@ -130,13 +130,26 @@ class Game(object):
             self.read_input(pygame.event.poll())
             self.clock.tick(cbzt.FPS)
 
-        return self.gameover()
+        self.gameover()
 
     def new_round(self):
         self.ball.reinit(self.left)
         self.p0.reinit((40,240))
         self.p1.reinit((600,240))
         self.left, self.right = False, False
+
+    def gameover(self):
+        if self.ai.get_score() >= 9:
+            msg = "YOU LOST"
+        else:
+            msg = "YOU WON"
+        t = cbzt.text.render(msg,width=8,height=8)
+        sw,sh = t.get_size()
+        self.screen.blit(t,(320-sw/2,240-sh/2))
+        pygame.display.flip()
+
+        while 1:
+            self.read_input(pygame.event.poll())
 
 
 class ScoreBoard(Drawable):
